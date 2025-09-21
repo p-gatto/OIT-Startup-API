@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OIT_Startup_API.Models.Domains.Menu;
+using OIT_Startup_API.Models.Dtos.Menu;
 using System.Text.Json;
 
 namespace OIT_Startup_API.Repositories.Implementations

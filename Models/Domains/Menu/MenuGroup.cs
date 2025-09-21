@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OIT_Startup_API.Models.Domains
+namespace OIT_Startup_API.Models.Domains.Menu
 {
     public class MenuGroup
     {

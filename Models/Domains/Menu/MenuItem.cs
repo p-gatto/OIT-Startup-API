@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OIT_Startup_API.Models.Domains
+namespace OIT_Startup_API.Models.Domains.Menu
 {
     public class MenuItem
     {

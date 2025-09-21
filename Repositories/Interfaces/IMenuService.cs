@@ -1,4 +1,6 @@
-﻿namespace OIT_Startup_API.Repositories.Interfaces
+﻿using OIT_Startup_API.Models.Dtos.Menu;
+
+namespace OIT_Startup_API.Repositories.Interfaces
 {
     public interface IMenuService
     {

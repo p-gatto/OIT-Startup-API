@@ -1,15 +1,17 @@
-﻿namespace OIT_Startup_API.Models.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace OIT_Startup_API.Models.Dtos.Menu
 {
-    public class MenuItemDto
+    public class CreateMenuItemDto
     {
-        public int Id { get; set; }
+        [Required]
         public string Title { get; set; } = string.Empty;
         public string? Icon { get; set; }
         public string? Route { get; set; }
         public Dictionary<string, object>? QueryParams { get; set; }
         public int Order { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
         public int? ParentId { get; set; }
-        public List<MenuItemDto>? Children { get; set; }
+        public int MenuGroupId { get; set; }
     }
 }

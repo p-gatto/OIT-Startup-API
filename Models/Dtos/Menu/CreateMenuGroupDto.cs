@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OIT_Startup_API.Models.Dtos
+namespace OIT_Startup_API.Models.Dtos.Menu
 {
     public class CreateMenuGroupDto
     {
