@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Net;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +58,11 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Authorization
+builder.Services.AddAuthorization();
+
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -93,6 +98,22 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// CORS per Angular
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AngularApp", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+
+        //policy.WithOrigins("http://localhost:4200")
+        //      .AllowAnyHeader()
+        //      .AllowAnyMethod()
+        //      .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 // Configure pipeline
@@ -107,7 +128,9 @@ app.UseHttpsRedirection();
 app.UseCors("AngularApp");
 
 // Authentication & Authorization middleware
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 //app.MapGet("/", () => "Hello World!");

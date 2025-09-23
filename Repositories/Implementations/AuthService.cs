@@ -129,7 +129,7 @@ namespace OIT_Startup_API.Repositories.Implementations
                 .SelectMany(u => u.UserGroups)
                 .Where(usg => usg.Group.IsActive)
                 .SelectMany(usg => usg.Group.GroupPermissions)
-                .Any(sgp => sgp.Permission.Resource == resource &&
+                .AnyAsync(sgp => sgp.Permission.Resource == resource &&
                            sgp.Permission.Action == action &&
                            sgp.Permission.IsActive);
 

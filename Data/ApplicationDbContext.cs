@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OIT_Startup_API.Models.Domains.Auth;
-using OIT_Startup_API.Models.Domains.Menu;
 using System.Text.Json;
 
 namespace OIT_Startup_API.Data
@@ -257,8 +255,7 @@ namespace OIT_Startup_API.Data
 
             modelBuilder.Entity<MenuItem>().HasData(menuItems);
         }
-               
-
+        
         public override int SaveChanges()
         {
             UpdateTimestamps();
