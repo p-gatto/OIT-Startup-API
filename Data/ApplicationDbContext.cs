@@ -180,7 +180,7 @@ namespace OIT_Startup_API.Data
                 LastName = "Administrator",
                 Email = "admin@oit.it",
                 Username = "admin",
-                PasswordHash = "$2a$11$rQiU3oyF8qRUQ2PmVYxqTOKnZEPGO4TL4EW8NXZxKoGcHoSLe6LNu", // Admin123!
+                PasswordHash = "$2a$11$007pBGqjmpMkk25IEHbKrO9Utd59B18AKoi2XCT8EK38mmgqAl9D6", // Admin123!
                 IsActive = true,
                 EmailConfirmed = true
             };
