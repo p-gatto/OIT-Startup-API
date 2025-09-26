@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OIT_Startup_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize] // Richiede autenticazione per tutti gli endpoint
     public class MenuController : ControllerBase
     {
         private readonly IMenuService _menuService;

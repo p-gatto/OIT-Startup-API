@@ -203,7 +203,7 @@ namespace OIT_Startup_API.Data
         {
             var groups = new[]
             {
-                new MenuGroup { Id = 1, Title = "Credenziali", Order = 1 },
+                new MenuGroup { Id = 1, Title = "Menu", Order = 1 },
                 new MenuGroup { Id = 2, Title = "Dashboard", Order = 2 },
                 new MenuGroup { Id = 3, Title = "Gestione", Order = 3 },
                 new MenuGroup { Id = 4, Title = "Analisi", Order = 4 },
@@ -215,10 +215,10 @@ namespace OIT_Startup_API.Data
             var menuItems = new[]
             {
                 // Credenziali
-                new MenuItem { Id = 1, Title = "Tutte le credenziali", Icon = "list", Route = "/credentials", QueryParams = "{}", Order = 1, MenuGroupId = 1 },
-                new MenuItem { Id = 2, Title = "Credenziali attive", Icon = "check_circle", Route = "/credentials", QueryParams = JsonSerializer.Serialize(new { active = true }), Order = 2, MenuGroupId = 1 },
-                new MenuItem { Id = 3, Title = "Credenziali scadute", Icon = "error", Route = "/credentials", QueryParams = JsonSerializer.Serialize(new { expired = true }), Order = 3, MenuGroupId = 1 },
-                new MenuItem { Id = 4, Title = "Credenziali recenti", Icon = "update", Route = "/credentials", QueryParams = JsonSerializer.Serialize(new { sort = "created", sortDirection = "desc" }), Order = 4, MenuGroupId = 1 },
+                new MenuItem { Id = 1, Title = "Tutte le voci di menu", Icon = "list", Route = "/menu", QueryParams = "{}", Order = 1, MenuGroupId = 1 },
+                new MenuItem { Id = 2, Title = "Voci di menu attive", Icon = "check_circle", Route = "/menu", QueryParams = JsonSerializer.Serialize(new { active = true }), Order = 2, MenuGroupId = 1 },
+                new MenuItem { Id = 3, Title = "Voci di menu scadute", Icon = "error", Route = "/menu", QueryParams = JsonSerializer.Serialize(new { expired = true }), Order = 3, MenuGroupId = 1 },
+                new MenuItem { Id = 4, Title = "Voci di menu recenti", Icon = "update", Route = "/menu", QueryParams = JsonSerializer.Serialize(new { sort = "created", sortDirection = "desc" }), Order = 4, MenuGroupId = 1 },
                 
                 // Dashboard
                 new MenuItem { Id = 5, Title = "Panoramica", Icon = "dashboard", Route = "/dashboard", QueryParams = "{}", Order = 1, MenuGroupId = 2 },
