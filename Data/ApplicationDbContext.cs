@@ -140,7 +140,7 @@ namespace OIT_Startup_API.Data
                 new Permission { Id = 4, Name = "Crea Utenti", Resource = "User", Action = "Create" },
                 new Permission { Id = 5, Name = "Modifica Utenti", Resource = "User", Action = "Update" },
                 new Permission { Id = 6, Name = "Elimina Utenti", Resource = "User", Action = "Delete" },
-                new Permission { Id = 7, Name = "Gestisci Gruppi Sicurezza", Resource = "SecurityGroup", Action = "Manage" },
+                new Permission { Id = 7, Name = "Gestisci Gruppi Sicurezza", Resource = "Group", Action = "Manage" },
                 new Permission { Id = 8, Name = "Visualizza Reports", Resource = "Report", Action = "Read" },
                 new Permission { Id = 9, Name = "Gestisci Sistema", Resource = "System", Action = "Manage" }
             };
