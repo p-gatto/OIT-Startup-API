@@ -214,7 +214,7 @@ namespace OIT_Startup_API.Data
 
             var menuItems = new[]
             {
-                // Credenziali
+                // Menu
                 new MenuItem { Id = 1, Title = "Tutte le voci di menu", Icon = "list", Route = "/menu", QueryParams = "{}", Order = 1, MenuGroupId = 1 },
                 new MenuItem { Id = 2, Title = "Voci di menu attive", Icon = "check_circle", Route = "/menu", QueryParams = JsonSerializer.Serialize(new { active = true }), Order = 2, MenuGroupId = 1 },
                 new MenuItem { Id = 3, Title = "Voci di menu scadute", Icon = "error", Route = "/menu", QueryParams = JsonSerializer.Serialize(new { expired = true }), Order = 3, MenuGroupId = 1 },
@@ -225,32 +225,20 @@ namespace OIT_Startup_API.Data
                 new MenuItem { Id = 6, Title = "Statistiche", Icon = "bar_chart", Route = "/stats", QueryParams = "{}", Order = 2, MenuGroupId = 2 },
                 
                 // Gestione - Parent items
-                new MenuItem { Id = 7, Title = "Utenti", Icon = "people", Route = "", QueryParams = "{}", Order = 1, MenuGroupId = 3 },
-                new MenuItem { Id = 8, Title = "Prodotti", Icon = "inventory", Route = "", QueryParams = "{}", Order = 2, MenuGroupId = 3 },
+                new MenuItem { Id = 7, Title = "Utenti", Icon = "people", Route = "", QueryParams = "{}", Order = 1, MenuGroupId = 3 },               
                 
                 // Gestione - Utenti children
-                new MenuItem { Id = 9, Title = "Lista Utenti", Icon = "list", Route = "/admin/users", QueryParams = "{}", Order = 1, MenuGroupId = 3, ParentId = 7 },
-                new MenuItem { Id = 10, Title = "Aggiungi Utente", Icon = "person_add", Route = "/admin/users/add", QueryParams = "{}", Order = 2, MenuGroupId = 3, ParentId = 7 },
-                new MenuItem { Id = 11, Title = "Gruppi Sicurezza", Icon = "admin_panel_settings", Route = "/admin/security-groups", QueryParams = "{}", Order = 3, MenuGroupId = 3, ParentId = 7 },
-                
-                // Gestione - Prodotti children
-                new MenuItem { Id = 12, Title = "Catalogo", Icon = "catalog", Route = "/products/catalog", QueryParams = "{}", Order = 1, MenuGroupId = 3, ParentId = 8 },
-                new MenuItem { Id = 13, Title = "Categorie", Icon = "category", Route = "/products/categories", QueryParams = "{}", Order = 2, MenuGroupId = 3, ParentId = 8 },
-                new MenuItem { Id = 14, Title = "Inventario", Icon = "warehouse", Route = "/products/inventory", QueryParams = "{}", Order = 3, MenuGroupId = 3, ParentId = 8 },
+                new MenuItem { Id = 8, Title = "Lista Utenti", Icon = "list", Route = "/admin/users", QueryParams = "{}", Order = 1, MenuGroupId = 3, ParentId = 7 },
+                new MenuItem { Id = 9, Title = "Aggiungi Utente", Icon = "person_add", Route = "/admin/users/create", QueryParams = "{}", Order = 2, MenuGroupId = 3, ParentId = 7 },
+                new MenuItem { Id = 10, Title = "Gruppi Sicurezza", Icon = "admin_panel_settings", Route = "/admin/security-groups", QueryParams = "{}", Order = 3, MenuGroupId = 3, ParentId = 7 },
                 
                 // Analisi
-                new MenuItem { Id = 15, Title = "Reports", Icon = "assessment", Route = "/reports", QueryParams = "{}", Order = 1, MenuGroupId = 4 },
-                new MenuItem { Id = 16, Title = "Analytics", Icon = "analytics", Route = "", QueryParams = null, Order = 2, MenuGroupId = 4 },
-                
-                // Analisi - Analytics children
-                new MenuItem { Id = 17, Title = "Panoramica", Icon = "insights", Route = "/analytics/overview", QueryParams = "{}", Order = 1, MenuGroupId = 4, ParentId = 16 },
-                new MenuItem { Id = 18, Title = "Vendite", Icon = "trending_up", Route = "/analytics/sales", QueryParams = "{}", Order = 2, MenuGroupId = 4, ParentId = 16 },
-                new MenuItem { Id = 19, Title = "Traffico", Icon = "traffic", Route = "/analytics/traffic", QueryParams = "{}", Order = 3, MenuGroupId = 4, ParentId = 16 },
-                
+                new MenuItem { Id = 11, Title = "Reports", Icon = "assessment", Route = "/reports", QueryParams = "{}", Order = 1, MenuGroupId = 4 },
+                               
                 // Sistema
-                new MenuItem { Id = 20, Title = "Configurazione", Icon = "tune", Route = "/config", QueryParams = "{}", Order = 1, MenuGroupId = 5 },
-                new MenuItem { Id = 21, Title = "Log Sistema", Icon = "list_alt", Route = "/logs", QueryParams = "{}", Order = 2, MenuGroupId = 5 },
-                new MenuItem { Id = 22, Title = "Supporto", Icon = "help", Route = "/support", QueryParams = "{}", Order = 3, MenuGroupId = 5 }
+                new MenuItem { Id = 12, Title = "Configurazione", Icon = "tune", Route = "/config", QueryParams = "{}", Order = 1, MenuGroupId = 5 },
+                new MenuItem { Id = 13, Title = "Log Sistema", Icon = "list_alt", Route = "/logs", QueryParams = "{}", Order = 2, MenuGroupId = 5 },
+                new MenuItem { Id = 14, Title = "Supporto", Icon = "help", Route = "/support", QueryParams = "{}", Order = 3, MenuGroupId = 5 }
             };
 
             modelBuilder.Entity<MenuItem>().HasData(menuItems);
