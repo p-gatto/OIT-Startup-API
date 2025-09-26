@@ -21,6 +21,22 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// CORS per Angular
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AngularApp", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+
+        //policy.WithOrigins("http://localhost:4200")
+        //      .AllowAnyHeader()
+        //      .AllowAnyMethod()
+        //      .AllowCredentials();
+    });
+});
+
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var secretKey = jwtSettings["SecretKey"] ?? throw new ArgumentNullException("Jwt:SecretKey not configured");
@@ -95,22 +111,6 @@ builder.Services.AddSwaggerGen(c =>
             },
             new List<string>()
         }
-    });
-});
-
-// CORS per Angular
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AngularApp", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-
-        //policy.WithOrigins("http://localhost:4200")
-        //      .AllowAnyHeader()
-        //      .AllowAnyMethod()
-        //      .AllowCredentials();
     });
 });
 
