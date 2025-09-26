@@ -8,7 +8,7 @@ namespace OIT_Startup_API.Models.Domains.Menu
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(120)]
         public string Title { get; set; } = string.Empty;
 
         public int Order { get; set; }

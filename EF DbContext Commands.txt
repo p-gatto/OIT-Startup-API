@@ -2,6 +2,8 @@
 
 dotnet ef migrations add "Modified Menu" -o "Data\Migrations" --context ApplicationDbContext
 
+dotnet ef migrations add "Modified Menu Title" -o "Data\Migrations" --context ApplicationDbContext
+
 dotnet ef database update --context ApplicationDbContext
 
 dotnet tool update --global dotnet-ef --version 8.0.20
