@@ -26,14 +26,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AngularApp", policy =>
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-
-        //policy.WithOrigins("http://localhost:4200")
+        //policy.AllowAnyOrigin()
         //      .AllowAnyHeader()
-        //      .AllowAnyMethod()
-        //      .AllowCredentials();
+        //      .AllowAnyMethod();
+
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
@@ -115,6 +115,42 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+// **SEEDING AUTOMATICO ALL'AVVIO**
+//using (var scope = app.Services.CreateScope())
+//{
+//    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+//    try
+//    {
+//        // Applica le migration pending
+//        if (context.Database.GetPendingMigrations().Any())
+//        {
+//            Console.WriteLine("Applicando migration pending...");
+//            context.Database.Migrate();
+//        }
+
+//        // Verifica se il database è vuoto e forza il seeding
+//        if (!context.Users.Any() || !context.MenuGroups.Any())
+//        {
+//            Console.WriteLine("Database vuoto, forzando il seeding...");
+
+//            // Elimina e ricrea il database per forzare il seeding
+//            context.Database.EnsureDeleted();
+//            context.Database.EnsureCreated();
+
+//            Console.WriteLine("Seeding completato!");
+//        }
+//        else
+//        {
+//            Console.WriteLine("Database già popolato.");
+//        }
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine($"Errore durante il seeding: {ex.Message}");
+//    }
+//}
 
 // Configure pipeline
 if (app.Environment.IsDevelopment())
